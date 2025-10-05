@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powers Engineering - Graniterock Run 2025 Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: #FFD700;
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        h4 {
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        @media (max-width: 640px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .guest-section {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .guest-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .guest-header h5 {
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn-primary {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        .btn-primary:hover {
+            background: #f0c800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #666;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #555;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.9em;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .required::after {
+            content: ' *';
+            color: #dc3545;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .summary-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #FFD700, #f0c800);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .summary-card h5 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+        
+        .summary-card p {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        .cost-breakdown {
+            background: #f0f8ff;
+            border: 2px solid #4169e1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .cost-breakdown h4 {
+            color: #4169e1;
+            margin-bottom: 15px;
+        }
+        
+        .cost-breakdown table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .cost-breakdown td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .cost-breakdown td:first-child {
+            font-weight: 600;
+        }
+        
+        .total-cost {
+            background: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .total-cost h3 {
+            color: white;
+            border: none;
+            margin-bottom: 10px;
+        }
+        
+        .total-cost p {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        
+        .registrations-table {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background: #FFD700;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .setup-instructions {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .setup-instructions h4 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>POWERS ENGINEERING</h1>
+            <p><strong>Graniterock Rock & Run 2025</strong></p>
+            <p>Sunday, October 12, 2025 • Aromas, CA</p>
+        </div>
+        
+        <!-- Google Sheets Setup -->
+        <div id="setupInstructions" class="setup-instructions">
+            <h4>⚠️ Google Sheets Setup Required</h4>
+            <p>Contact admin for setup or enter your Google Apps Script URL:</p>
+            <div class="form-group">
+                <input type="text" id="webAppUrl" placeholder="https://script.google.com/macros/s/...">
+                <button class="btn btn-success" onclick="saveWebAppUrl()">Save & Test Connection</button>
+            </div>
+        </div>
+        
+        <div id="alertContainer"></div>
+        
+        <!-- Registration Form -->
+        <div class="form-container">
+            <h3>Employee Registration Form</h3>
+            <form id="registrationForm">
+                <h4>Employee Information</h4>
+                <div class="form-group">
+                    <label for="employeeName" class="required">Employee Name</label>
+                    <input type="text" id="employeeName" name="employeeName" required>
+                </div>
+                
+                <h4>Registration Details</h4>
+                <div class="two-column">
+                    <div class="form-group">
+                        <label for="participationType" class="required">Participation</label>
+                        <select id="participationType" name="participationType" required onchange="toggleRaceOptions()">
+                            <option value="">Select</option>
+                            <option value="5K">Running 5K</option>
+                            <option value="10K">Running 10K</option>
+                            <option value="Spectating">Spectating Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="shirtType" class="required">Shirt Type</label>
+                        <select id="shirtType" name="shirtType" required onchange="updateShirtSizes()">
+                            <option value="">Select Type</option>
+                            <option value="Men's">Men's</option>
+                            <option value="Women's">Women's</option>
+                            <option value="Youth">Youth</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="two-column">
+                    <div class="form-group">
+                        <label for="shirtSize" class="required">Shirt Size</label>
+                        <select id="shirtSize" name="shirtSize" required>
+                            <option value="">Select shirt type first</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="extraShirts">Extra Shirts Needed</label>
+                        <input type="number" id="extraShirts" name="extraShirts" min="0" max="10" value="0">
+                    </div>
+                </div>
+                
+                <h4>Event Options</h4>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="alreadyRegistered" name="alreadyRegistered">
+                    <label for="alreadyRegistered">Already registered online & signed waiver</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="aquariumTickets" name="aquariumTickets">
+                    <label for="aquariumTickets">Need Monterey Bay Aquarium tickets</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="joiningLunch" name="joiningLunch">
+                    <label for="joiningLunch">Joining team lunch after race</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="needsLodging" name="needsLodging">
+                    <label for="needsLodging">Need lodging for Saturday night (10/11)</label>
+                </div>
+                
+                <h4>Transportation</h4>
+                <div class="form-group">
+                    <label for="drivingFrom">Driving From (City, State)</label>
+                    <input type="text" id="drivingFrom" name="drivingFrom" placeholder="e.g., Sacramento, CA">
+                    <button type="button" class="btn btn-secondary" onclick="calculateDistance()" style="margin-top: 10px;">Calculate Distance</button>
+                </div>
+                <div class="form-group">
+                    <label for="distance">Distance to Aromas, CA (miles)</label>
+                    <input type="number" id="distance" name="distance" readonly style="background: #f0f0f0;">
+                </div>
+                
+                <h4>Guests</h4>
+                <div id="guestsContainer"></div>
+                <button type="button" class="btn btn-secondary" onclick="addGuest()">+ Add Guest</button>
+                
+                <div style="margin-top: 30px;">
+                    <button type="submit" class="btn btn-primary">Submit Registration</button>
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Summary Section -->
+        <div class="summary-container">
+            <h3>Registration Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h5>Total People</h5>
+                    <p id="totalPeople">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>5K Runners</h5>
+                    <p id="total5K">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>10K Runners</h5>
+                    <p id="total10K">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>Spectators</h5>
+                    <p id="totalSpectators">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>Aquarium Tickets</h5>
+                    <p id="totalAquarium">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>Lunch Count</h5>
+                    <p id="totalLunch">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>Lodging Rooms</h5>
+                    <p id="totalLodging">0</p>
+                </div>
+                <div class="summary-card">
+                    <h5>Already Registered</h5>
+                    <p id="totalRegistered">0</p>
+                </div>
+            </div>
+            
+            <div class="cost-breakdown">
+                <h4>Cost Breakdown</h4>
+                <table>
+                    <tr><td>Registration ($35.60 × <span id="regCount">0</span>)</td><td>$<span id="regCost">0.00</span></td></tr>
+                    <tr><td>Aquarium Tickets ($65 × <span id="aquariumCount">0</span>)</td><td>$<span id="aquariumCost">0.00</span></td></tr>
+                    <tr><td>Lunch ($27.50 × <span id="lunchCount">0</span>)</td><td>$<span id="lunchCost">0.00</span></td></tr>
+                    <tr><td>Lodging ($175 × <span id="lodgingCount">0</span>)</td><td>$<span id="lodgingCost">0.00</span></td></tr>
+                    <tr><td>Mileage Reimbursement</td><td>$<span id="mileageCost">0.00</span></td></tr>
+                </table>
+            </div>
+            
+            <div class="total-cost">
+                <h3>Total Estimated Cost</h3>
+                <p>$<span id="totalCost">0.00</span></p>
+            </div>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <button class="btn btn-success" onclick="exportToSheets()">📊 Export to Google Sheets</button>
+                <button class="btn btn-primary" onclick="exportToCSV()">📥 Download CSV</button>
+            </div>
+        </div>
+        
+        <!-- Registrations Table -->
+        <div class="registrations-table">
+            <h3>All Registrations</h3>
+            <table id="registrationTable">
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        <th>Type</th>
+                        <th>Race</th>
+                        <th>Shirt</th>
+                        <th>Extra Shirts</th>
+                        <th>Registered</th>
+                        <th>Aquarium</th>
+                        <th>Lunch</th>
+                        <th>Lodging</th>
+                        <th>From</th>
+                        <th>Distance</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="registrationTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration
+        let GOOGLE_WEB_APP_URL = localStorage.getItem('powersRunWebAppUrl') || '';
+        let registrations = JSON.parse(localStorage.getItem('powersRunRegistrations2025') || '[]');
+        let guestCounter = 0;
+        
+        // Cost constants
+        const COSTS = {
+            REGISTRATION: 35.60,
+            AQUARIUM: 65.00,
+            LUNCH: 27.50,
+            LODGING: 175.00,
+            MILEAGE_RATE: 0.25  // per mile, round trip
+        };
+        
+        // Distance lookup table (in miles, one-way)
+        const DISTANCES = {
+            'sacramento, ca': 230,
+            'san francisco, ca': 90,
+            'san jose, ca': 45,
+            'oakland, ca': 85,
+            'fresno, ca': 150,
+            'los angeles, ca': 350,
+            'san diego, ca': 450,
+            'modesto, ca': 180,
+            'stockton, ca': 200,
+            'hayward, ca': 70,
+            'fremont, ca': 55,
+            'santa cruz, ca': 25,
+            'monterey, ca': 15,
+            'salinas, ca': 10,
+            'watsonville, ca': 8,
+            'gilroy, ca': 30,
+            'morgan hill, ca': 35,
+            'hollister, ca': 15,
+            'santa clara, ca': 50,
+            'sunnyvale, ca': 55,
+            'palo alto, ca': 65,
+            'redwood city, ca': 75,
+            'san mateo, ca': 80,
+            'berkeley, ca': 90,
+            'richmond, ca': 95,
+            'concord, ca': 100,
+            'antioch, ca': 120,
+            'tracy, ca': 160,
+            'manteca, ca': 170,
+            'turlock, ca': 140,
+            'merced, ca': 120,
+            'visalia, ca': 200,
+            'bakersfield, ca': 280,
+            'santa barbara, ca': 230,
+            'san luis obispo, ca': 170,
+            'paso robles, ca': 130,
+            'santa maria, ca': 190
+        };
+        
+        // Shirt sizes by type
+        const SHIRT_SIZES = {
+            "Men's": ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+            "Women's": ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'],
+            "Youth": ['XS', 'S', 'M', 'L', 'XL']
+        };
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            if (GOOGLE_WEB_APP_URL) {
+                document.getElementById('setupInstructions').style.display = 'none';
+            }
+            updateSummary();
+            updateTable();
+        });
+        
+        // Form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const registration = {
+                id: Date.now(),
+                timestamp: new Date().toISOString(),
+                employee: {
+                    name: formData.get('employeeName'),
+                    participationType: formData.get('participationType'),
+                    shirtType: formData.get('shirtType'),
+                    shirtSize: formData.get('shirtSize'),
+                    extraShirts: parseInt(formData.get('extraShirts')) || 0,
+                    alreadyRegistered: document.getElementById('alreadyRegistered').checked,
+                    aquariumTickets: document.getElementById('aquariumTickets').checked,
+                    joiningLunch: document.getElementById('joiningLunch').checked,
+                    needsLodging: document.getElementById('needsLodging').checked,
+                    drivingFrom: formData.get('drivingFrom'),
+                    distance: parseInt(formData.get('distance')) || 0
+                },
+                guests: []
+            };
+            
+            // Collect guest data
+            const guestSections = document.querySelectorAll('.guest-section');
+            guestSections.forEach(section => {
+                const guestId = section.id;
+                const guest = {
+                    name: document.getElementById(guestId + '_name').value,
+                    participationType: document.getElementById(guestId + '_participationType').value,
+                    shirtType: document.getElementById(guestId + '_shirtType').value,
+                    shirtSize: document.getElementById(guestId + '_shirtSize').value,
+                    aquariumTickets: document.getElementById(guestId + '_aquariumTickets').checked,
+                    joiningLunch: document.getElementById(guestId + '_joiningLunch').checked
+                };
+                registration.guests.push(guest);
+            });
+            
+            // Save locally
+            registrations.push(registration);
+            localStorage.setItem('powersRunRegistrations2025', JSON.stringify(registrations));
+            
+            // Sync to Google Sheets
+            if (GOOGLE_WEB_APP_URL) {
+                syncToGoogleSheets(registration);
+            }
+            
+            // Update UI
+            showAlert('Registration submitted successfully!', 'success');
+            clearForm();
+            updateSummary();
+            updateTable();
+        });
+        
+        // Update shirt sizes based on type
+        function updateShirtSizes() {
+            const shirtType = document.getElementById('shirtType').value;
+            const shirtSizeSelect = document.getElementById('shirtSize');
+            
+            shirtSizeSelect.innerHTML = '<option value="">Select Size</option>';
+            
+            if (shirtType && SHIRT_SIZES[shirtType]) {
+                SHIRT_SIZES[shirtType].forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = size;
+                    shirtSizeSelect.appendChild(option);
+                });
+            }
+        }
+        
+        function updateGuestShirtSizes(guestId) {
+            const shirtType = document.getElementById(guestId + '_shirtType').value;
+            const shirtSizeSelect = document.getElementById(guestId + '_shirtSize');
+            
+            shirtSizeSelect.innerHTML = '<option value="">Select Size</option>';
+            
+            if (shirtType && SHIRT_SIZES[shirtType]) {
+                SHIRT_SIZES[shirtType].forEach(size => {
+                    const option = document.createElement('option');
+                    option.value = size;
+                    option.textContent = size;
+                    shirtSizeSelect.appendChild(option);
+                });
+            }
+        }
+        
+        // Toggle race options
+        function toggleRaceOptions() {
+            // This is a placeholder - you can add logic here if needed
+        }
+        
+        // Calculate distance
+        function calculateDistance() {
+            const fromLocation = document.getElementById('drivingFrom').value.toLowerCase().trim();
+            
+            if (!fromLocation) {
+                showAlert('Please enter a location', 'error');
+                return;
+            }
+            
+            let distance = DISTANCES[fromLocation];
+            
+            if (!distance) {
+                // Try partial matches
+                for (const [city, miles] of Object.entries(DISTANCES)) {
+                    if (fromLocation.includes(city.split(',')[0])) {
+                        distance = miles;
+                        break;
+                    }
+                }
+            }
+            
+            if (distance) {
+                document.getElementById('distance').value = distance;
+                showAlert(`Distance calculated: ${distance} miles one-way`, 'success');
+            } else {
+                showAlert('Could not find distance. Please enter manually or try format: City, CA', 'error');
+            }
+        }
+        
+        // Add guest
+        function addGuest() {
+            guestCounter++;
+            const guestId = 'guest' + guestCounter;
+            
+            const guestHTML = `
+                <div class="guest-section" id="${guestId}">
+                    <div class="guest-header">
+                        <h5>Guest ${guestCounter}</h5>
+                        <button type="button" class="btn btn-danger" onclick="removeGuest('${guestId}')">Remove</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Guest Name</label>
+                        <input type="text" id="${guestId}_name" required>
+                    </div>
+                    <div class="two-column">
+                        <div class="form-group">
+                            <label class="required">Participation</label>
+                            <select id="${guestId}_participationType" required>
+                                <option value="">Select</option>
+                                <option value="5K">Running 5K</option>
+                                <option value="10K">Running 10K</option>
+                                <option value="Spectating">Spectating Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="required">Shirt Type</label>
+                            <select id="${guestId}_shirtType" required onchange="updateGuestShirtSizes('${guestId}')">
+                                <option value="">Select Type</option>
+                                <option value="Men's">Men's</option>
+                                <option value="Women's">Women's</option>
+                                <option value="Youth">Youth</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Shirt Size</label>
+                        <select id="${guestId}_shirtSize" required>
+                            <option value="">Select shirt type first</option>
+                        </select>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="${guestId}_aquariumTickets">
+                        <label for="${guestId}_aquariumTickets">Need Aquarium ticket</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="${guestId}_joiningLunch">
+                        <label for="${guestId}_joiningLunch">Joining lunch</label>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('guestsContainer').insertAdjacentHTML('beforeend', guestHTML);
+        }
+        
+        // Remove guest
+        function removeGuest(guestId) {
+            document.getElementById(guestId).remove();
+        }
+        
+        // Clear form
+        function clearForm() {
+            document.getElementById('registrationForm').reset();
+            document.getElementById('guestsContainer').innerHTML = '';
+            document.getElementById('distance').value = '';
+            document.getElementById('shirtSize').innerHTML = '<option value="">Select shirt type first</option>';
+            guestCounter = 0;
+        }
+        
+        // Update summary
+        function updateSummary() {
+            let totalPeople = 0;
+            let total5K = 0;
+            let total10K = 0;
+            let totalSpectators = 0;
+            let totalAquarium = 0;
+            let totalLunch = 0;
+            let totalLodging = 0;
+            let totalRegistered = 0;
+            let totalMileage = 0;
+            
+            registrations.forEach(reg => {
+                // Employee
+                totalPeople++;
+                if (reg.employee.participationType === '5K') total5K++;
+                else if (reg.employee.participationType === '10K') total10K++;
+                else if (reg.employee.participationType === 'Spectating') totalSpectators++;
+                
+                if (reg.employee.alreadyRegistered) totalRegistered++;
+                if (reg.employee.aquariumTickets) totalAquarium++;
+                if (reg.employee.joiningLunch) totalLunch++;
+                if (reg.employee.needsLodging) totalLodging++;
+                
+                if (reg.employee.distance) {
+                    totalMileage += reg.employee.distance * 2; // Round trip
+                }
+                
+                // Guests
+                reg.guests.forEach(guest => {
+                    totalPeople++;
+                    if (guest.participationType === '5K') total5K++;
+                    else if (guest.participationType === '10K') total10K++;
+                    else if (guest.participationType === 'Spectating') totalSpectators++;
+                    
+                    if (guest.aquariumTickets) totalAquarium++;
+                    if (guest.joiningLunch) totalLunch++;
+                });
+            });
+            
+            // Update counts
+            document.getElementById('totalPeople').textContent = totalPeople;
+            document.getElementById('total5K').textContent = total5K;
+            document.getElementById('total10K').textContent = total10K;
+            document.getElementById('totalSpectators').textContent = totalSpectators;
+            document.getElementById('totalAquarium').textContent = totalAquarium;
+            document.getElementById('totalLunch').textContent = totalLunch;
+            document.getElementById('totalLodging').textContent = totalLodging;
+            document.getElementById('totalRegistered').textContent = totalRegistered;
+            
+            // Calculate costs
+            const needsRegistration = totalPeople - totalRegistered;
+            const regCost = needsRegistration * COSTS.REGISTRATION;
+            const aquariumCost = totalAquarium * COSTS.AQUARIUM;
+            const lunchCost = totalLunch * COSTS.LUNCH;
+            const lodgingCost = totalLodging * COSTS.LODGING;
+            const mileageCost = totalMileage * COSTS.MILEAGE_RATE;
+            const totalCost = regCost + aquariumCost + lunchCost + lodgingCost + mileageCost;
+            
+            // Update cost display
+            document.getElementById('regCount').textContent = needsRegistration;
+            document.getElementById('regCost').textContent = regCost.toFixed(2);
+            document.getElementById('aquariumCount').textContent = totalAquarium;
+            document.getElementById('aquariumCost').textContent = aquariumCost.toFixed(2);
+            document.getElementById('lunchCount').textContent = totalLunch;
+            document.getElementById('lunchCost').textContent = lunchCost.toFixed(2);
+            document.getElementById('lodgingCount').textContent = totalLodging;
+            document.getElementById('lodgingCost').textContent = lodgingCost.toFixed(2);
+            document.getElementById('mileageCost').textContent = mileageCost.toFixed(2);
+            document.getElementById('totalCost').textContent = totalCost.toFixed(2);
+        }
+        
+        // Update table
+        function updateTable() {
+            const tbody = document.getElementById('registrationTableBody');
+            tbody.innerHTML = '';
+            
+            registrations.forEach(reg => {
+                // Employee row
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${reg.employee.name}</td>
+                    <td>Employee</td>
+                    <td>${reg.employee.participationType}</td>
+                    <td>${reg.employee.shirtType} ${reg.employee.shirtSize}</td>
+                    <td>${reg.employee.extraShirts}</td>
+                    <td>${reg.employee.alreadyRegistered ? '✓' : ''}</td>
+                    <td>${reg.employee.aquariumTickets ? '✓' : ''}</td>
+                    <td>${reg.employee.joiningLunch ? '✓' : ''}</td>
+                    <td>${reg.employee.needsLodging ? '✓' : ''}</td>
+                    <td>${reg.employee.drivingFrom || ''}</td>
+                    <td>${reg.employee.distance || ''}</td>
+                    <td><button class="btn btn-danger" onclick="deleteRegistration(${reg.id})">Delete</button></td>
+                `;
+                
+                // Guest rows
+                reg.guests.forEach((guest, index) => {
+                    const guestRow = tbody.insertRow();
+                    guestRow.style.background = '#f9f9f9';
+                    guestRow.innerHTML = `
+                        <td style="padding-left: 30px;">↳ ${guest.name}</td>
+                        <td>Guest ${index + 1}</td>
+                        <td>${guest.participationType}</td>
+                        <td>${guest.shirtType} ${guest.shirtSize}</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>${guest.aquariumTickets ? '✓' : ''}</td>
+                        <td>${guest.joiningLunch ? '✓' : ''}</td>
+                        <td>-</td>
+                        <td colspan="3">With ${reg.employee.name}</td>
+                    `;
+                });
+            });
+        }
+        
+        // Delete registration
+        function deleteRegistration(id) {
+            if (confirm('Delete this registration?')) {
+                registrations = registrations.filter(r => r.id !== id);
+                localStorage.setItem('powersRunRegistrations2025', JSON.stringify(registrations));
+                updateSummary();
+                updateTable();
+                showAlert('Registration deleted', 'success');
+            }
+        }
+        
+        // Google Sheets integration
+        function saveWebAppUrl() {
+            const url = document.getElementById('webAppUrl').value.trim();
+            if (!url) {
+                showAlert('Please enter a Web App URL', 'error');
+                return;
+            }
+            
+            GOOGLE_WEB_APP_URL = url;
+            localStorage.setItem('powersRunWebAppUrl', url);
+            document.getElementById('setupInstructions').style.display = 'none';
+            showAlert('Google Sheets connected!', 'success');
+        }
+        
+        function syncToGoogleSheets(registration) {
+            if (!GOOGLE_WEB_APP_URL) return;
+            
+            // Format data for Google Sheets
+            const rows = [];
+            
+            // Employee row
+            rows.push([
+                new Date().toLocaleString(),
+                registration.employee.name,
+                'Employee',
+                registration.employee.participationType,
+                registration.employee.shirtType,
+                registration.employee.shirtSize,
+                registration.employee.extraShirts,
+                registration.employee.alreadyRegistered ? 'Yes' : 'No',
+                registration.employee.aquariumTickets ? 'Yes' : 'No',
+                registration.employee.joiningLunch ? 'Yes' : 'No',
+                registration.employee.needsLodging ? 'Yes' : 'No',
+                registration.employee.drivingFrom || '',
+                registration.employee.distance || 0,
+                // Calculate individual costs
+                registration.employee.alreadyRegistered ? 0 : COSTS.REGISTRATION,
+                registration.employee.aquariumTickets ? COSTS.AQUARIUM : 0,
+                registration.employee.joiningLunch ? COSTS.LUNCH : 0,
+                registration.employee.needsLodging ? COSTS.LODGING : 0,
+                registration.employee.distance ? registration.employee.distance * 2 * COSTS.MILEAGE_RATE : 0
+            ]);
+            
+            // Guest rows
+            registration.guests.forEach((guest, index) => {
+                rows.push([
+                    new Date().toLocaleString(),
+                    guest.name,
+                    `Guest of ${registration.employee.name}`,
+                    guest.participationType,
+                    guest.shirtType,
+                    guest.shirtSize,
+                    0, // No extra shirts for guests
+                    'No', // Guests not pre-registered
+                    guest.aquariumTickets ? 'Yes' : 'No',
+                    guest.joiningLunch ? 'Yes' : 'No',
+                    'No', // Lodging with employee
+                    '', // Traveling with employee
+                    0,
+                    COSTS.REGISTRATION,
+                    guest.aquariumTickets ? COSTS.AQUARIUM : 0,
+                    guest.joiningLunch ? COSTS.LUNCH : 0,
+                    0, // No separate lodging
+                    0  // No separate mileage
+                ]);
+            });
+            
+            // Send to Google Sheets
+            fetch(GOOGLE_WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain',
+                },
+                body: JSON.stringify({ rows: rows })
+            });
+        }
+        
+        function exportToSheets() {
+            if (!GOOGLE_WEB_APP_URL) {
+                showAlert('Please configure Google Sheets first', 'error');
+                return;
+            }
+            
+            // Export all registrations
+            registrations.forEach(reg => {
+                syncToGoogleSheets(reg);
+            });
+            
+            showAlert('Data exported to Google Sheets!', 'success');
+        }
+        
+        // Export to CSV
+        function exportToCSV() {
+            const headers = ['Timestamp', 'Name', 'Type', 'Race/Activity', 'Shirt Type', 'Shirt Size', 'Extra Shirts', 'Pre-Registered', 'Aquarium', 'Lunch', 'Lodging', 'From', 'Distance', 'Reg Cost', 'Aquarium Cost', 'Lunch Cost', 'Lodging Cost', 'Mileage Cost'];
+            const rows = [headers.join(',')];
+            
+            registrations.forEach(reg => {
+                // Employee row
+                const empRow = [
+                    new Date(reg.timestamp).toLocaleString(),
+                    reg.employee.name,
+                    'Employee',
+                    reg.employee.participationType,
+                    reg.employee.shirtType,
+                    reg.employee.shirtSize,
+                    reg.employee.extraShirts,
+                    reg.employee.alreadyRegistered ? 'Yes' : 'No',
+                    reg.employee.aquariumTickets ? 'Yes' : 'No',
+                    reg.employee.joiningLunch ? 'Yes' : 'No',
+                    reg.employee.needsLodging ? 'Yes' : 'No',
+                    reg.employee.drivingFrom || '',
+                    reg.employee.distance || 0,
+                    reg.employee.alreadyRegistered ? 0 : COSTS.REGISTRATION,
+                    reg.employee.aquariumTickets ? COSTS.AQUARIUM : 0,
+                    reg.employee.joiningLunch ? COSTS.LUNCH : 0,
+                    reg.employee.needsLodging ? COSTS.LODGING : 0,
+                    reg.employee.distance ? (reg.employee.distance * 2 * COSTS.MILEAGE_RATE).toFixed(2) : 0
+                ];
+                rows.push(empRow.map(field => `"${field}"`).join(','));
+                
+                // Guest rows
+                reg.guests.forEach(guest => {
+                    const guestRow = [
+                        new Date(reg.timestamp).toLocaleString(),
+                        guest.name,
+                        'Guest',
+                        guest.participationType,
+                        guest.shirtType,
+                        guest.shirtSize,
+                        0,
+                        'No',
+                        guest.aquariumTickets ? 'Yes' : 'No',
+                        guest.joiningLunch ? 'Yes' : 'No',
+                        'No',
+                        `With ${reg.employee.name}`,
+                        0,
+                        COSTS.REGISTRATION,
+                        guest.aquariumTickets ? COSTS.AQUARIUM : 0,
+                        guest.joiningLunch ? COSTS.LUNCH : 0,
+                        0,
+                        0
+                    ];
+                    rows.push(guestRow.map(field => `"${field}"`).join(','));
+                });
+            });
+            
+            const csvContent = rows.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'powers_run_registrations.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            showAlert('CSV downloaded!', 'success');
+        }
+        
+        // Alert function
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-' + type;
+            alertDiv.textContent = message;
+            
+            const container = document.getElementById('alertContainer');
+            container.innerHTML = '';
+            container.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
