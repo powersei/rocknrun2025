@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powers Engineering - Granite Rock Run Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: #FFD700;
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        .header h2 {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-box h3 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        .info-box h4 {
+            color: #555;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .info-box li {
+            margin-bottom: 8px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-container, .stats-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h3 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+        }
+        
+        .form-section h4 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #FFD700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn-primary {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        .btn-primary:hover {
+            background: #f0c800;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #666;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #555;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #FFD700, #f0c800);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .stat-card h4 {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            opacity: 0.8;
+        }
+        
+        .stat-card p {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .table-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background: #FFD700;
+            color: #333;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:hover {
+            background: #f9f9f9;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .required::after {
+            content: ' *';
+            color: #dc3545;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        @media (max-width: 640px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .guest-section {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .guest-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .guest-header h5 {
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .btn-remove {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        
+        .btn-remove:hover {
+            background: #c82333;
+        }
+        
+        .admin-header {
+            background: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .public-view-note {
+            background: #17a2b8;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .company-mission {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .company-mission h3 {
+            color: white;
+            border-bottom: 3px solid #FFD700;
+            margin-bottom: 20px;
+        }
+        
+        .company-mission ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .company-mission li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .company-mission li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>POWERS ENGINEERING & INSPECTION INC.</h1>
+            <h2>Granite Rock Rock & Run 2025</h2>
+            <p><strong>October 12, 2025</strong> • AR Wilson Quarry, Aromas, CA</p>
+            <p>Benefit Run for Aromas School • 5K Walk/Run & 10K Run</p>
+        </div>
+        
+        <div class="company-mission">
+            <h3>Why We're Making This a Powers Engineering Event</h3>
+            <p style="margin-bottom: 20px;">At Powers Engineering & Inspection Inc., we believe in building more than just structures – we build community, health, and lasting relationships. This event represents our core values:</p>
+            <ul>
+                <li><strong>Promote Healthy Lifestyles:</strong> Encouraging our team and families to stay active and healthy</li>
+                <li><strong>Give Back to Communities:</strong> Supporting Aromas School and making a positive local impact</li>
+                <li><strong>Support Our Clients:</strong> Standing alongside Granite Rock in their community endeavors</li>
+                <li><strong>Strengthen Customer Relationships:</strong> Being present with a valued client and build stronger relationships</li>
+                <li><strong>Team Bonding:</strong> Creating meaningful moments for our team to connect outside the office</li>
+            </ul>
+            <p style="margin-top: 20px; font-style: italic;">Engineered to run. Together, we run stronger. Together, we build better.</p>
+        </div>
+        
+        <div class="info-box" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <h3>About the Event</h3>
+            <p style="margin-bottom: 10px;"><strong>What:</strong> Run or walk through an active 125-year-old granite quarry with massive equipment, unique rock formations, and stunning natural surroundings. Open house follows!</p>
+            <p style="margin-bottom: 10px;"><strong>When:</strong> Sunday, October 12, 2025 - Race number pickup 7:00am, race starts 8:00am</p>
+            <p style="margin-bottom: 10px;"><strong>Where:</strong> A.R. Wilson Quarry, Aromas, CA</p>
+            <p style="margin-bottom: 15px;"><strong>Why:</strong> All proceeds benefit Aromas School</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://runsignup.com/Race/CA/Aromas/RockandRun" target="_blank" class="btn btn-primary" style="font-size: 1.3em; padding: 18px 40px; display: inline-block; text-decoration: none;">
+                    📋 Event Information & Details →
+                </a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #666;">Powers Engineering will handle all race registrations - just fill out the form below!</p>
+            </div>
+            
+            <h4>Event Day Plans:</h4>
+            <ul>
+                <li><strong>Race Day:</strong> Sunday, October 12, 2025 at 8:00am</li>
+                <li><strong>After the Race:</strong> Team lunch together, then optional visit to Monterey Bay Aquarium</li>
+                <li><strong>Lodging:</strong> We'll take care of Saturday night accommodations for those who need it</li>
+                <li><strong>Travel:</strong> Let us know where you're coming from so we can coordinate logistics</li>
+            </ul>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 1000px; margin-left: auto; margin-right: auto;">
+            <h3 style="text-align: center; margin-bottom: 30px;">Event Shirt & Branding</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                <div style="text-align: center;">
+                    <img src="IMG_2091.PNG" alt="Powers Logo - Engineered to Run" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 15px; font-weight: 600; color: #333;">Front Design</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="IMG_2099.PNG" alt="Rock & Run 2025 Design" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <p style="margin-top: 15px; font-weight: 600; color: #333;">Back Design</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <img src="IMG_2097.png" alt="Event Shirt Mockup" style="max-width: 600px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+                <p style="margin-top: 15px; font-weight: 600; color: #333;">Official Event Shirt (Item #00396)</p>
+            </div>
+            
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin-top: 30px;">
+                <h4 style="margin-bottom: 15px; color: #333;">Shirt Features:</h4>
+                <ul style="color: #555; line-height: 1.8;">
+                    <li>100% polyester with Pro-Lock technology - moisture-wicking & UPF 50+ sun protection</li>
+                    <li>Snag-resistant with vibrant, colorfast graphics</li>
+                    <li>Available in Youth, Women's, and Men's sizes</li>
+                    <li>Bold yellow/gold Powers Engineering and Graniterock branding</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="adminHeader" class="admin-header" style="display: none;">
+            <div>
+                <strong>Admin View</strong> - Full access to all data and controls
+            </div>
+            <button class="btn btn-secondary" onclick="logout()" style="margin: 0;">Logout</button>
+        </div>
+        
+        <div id="alertContainer"></div>
+        
+        <div id="formContainer">
+            <div class="form-container" style="max-width: 800px; margin: 0 auto 30px;">
+                <h3>Registration Form</h3>
+                <form id="registrationForm">
+                    <div class="form-section">
+                        <h4>Primary Participant Information</h4>
+                        <div class="two-column">
+                            <div class="form-group">
+                                <label for="firstName" class="required">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="required">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="two-column">
+                            <div class="form-group">
+                                <label for="dateOfBirth" class="required">Date of Birth</label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age" class="required">Age</label>
+                                <input type="number" id="age" name="age" min="1" max="120" readonly style="background: #f0f0f0;" required>
+                            </div>
+                        </div>
+                        
+                        <div class="two-column">
+                            <div class="form-group">
+                                <label for="gender" class="required">Gender</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="raceDistance" class="required">Race Distance</label>
+                                <select id="raceDistance" name="raceDistance" required>
+                                    <option value="">Select Distance</option>
+                                    <option value="5K">5K</option>
+                                    <option value="10K">10K</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Contact Information</h4>
+                        <div class="form-group">
+                            <label for="email" class="required">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="required">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="streetAddress" class="required">Street Address</label>
+                            <input type="text" id="streetAddress" name="streetAddress" required>
+                        </div>
+                        <div class="two-column">
+                            <div class="form-group">
+                                <label for="city" class="required">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state" class="required">State</label>
+                                <input type="text" id="state" name="state" maxlength="2" placeholder="CA" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode" class="required">ZIP Code</label>
+                            <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{5}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Event Options</h4>
+                        <div class="form-group">
+                            <label for="shirtSize" class="required">Shirt Size & Type</label>
+                            <select id="shirtSize" name="shirtSize" required>
+                                <option value="">Select Size</option>
+                                <optgroup label="Youth">
+                                    <option value="Youth XS">Youth XS</option>
+                                    <option value="Youth S">Youth S</option>
+                                    <option value="Youth M">Youth M</option>
+                                    <option value="Youth L">Youth L</option>
+                                    <option value="Youth XL">Youth XL</option>
+                                </optgroup>
+                                <optgroup label="Women's">
+                                    <option value="Women's S">Women's S</option>
+                                    <option value="Women's M">Women's M</option>
+                                    <option value="Women's L">Women's L</option>
+                                    <option value="Women's XL">Women's XL</option>
+                                    <option value="Women's 2XL">Women's 2XL</option>
+                                    <option value="Women's 3XL">Women's 3XL</option>
+                                </optgroup>
+                                <optgroup label="Men's">
+                                    <option value="Men's XS">Men's XS</option>
+                                    <option value="Men's S">Men's S</option>
+                                    <option value="Men's M">Men's M</option>
+                                    <option value="Men's L">Men's L</option>
+                                    <option value="Men's XL">Men's XL</option>
+                                    <option value="Men's 2XL">Men's 2XL</option>
+                                    <option value="Men's 3XL">Men's 3XL</option>
+                                    <option value="Men's 4XL">Men's 4XL</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="montereyAquarium" name="montereyAquarium">
+                            <label for="montereyAquarium">I'd like to join the team at Monterey Bay Aquarium after the race</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="needsLunch" name="needsLunch">
+                            <label for="needsLunch">I'll join the team lunch after the race</label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="needsLodging" name="needsLodging">
+                            <label for="needsLodging">I need lodging for Saturday night (10/11)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Transportation (for you and all guests)</h4>
+                        <div class="form-group">
+                            <label for="transportation" class="required">How are you getting there?</label>
+                            <select id="transportation" name="transportation" required>
+                                <option value="">Select Transportation</option>
+                                <option value="Driving">Driving</option>
+                                <option value="Flight">Flight</option>
+                            </select>
+                        </div>
+                        
+                        <div id="driveOptions" style="display: none;">
+                            <div class="form-group">
+                                <label for="drivingFrom" class="required">Where are you driving from? (City, State)</label>
+                                <input type="text" id="drivingFrom" name="drivingFrom" placeholder="e.g., Sacramento, CA">
+                                <button type="button" class="btn btn-primary" onclick="calculateDistance()" style="margin-top: 10px;">Calculate Distance</button>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="driveMiles">One-way distance to Aromas, CA (miles)</label>
+                                <input type="number" id="driveMiles" name="driveMiles" min="0" placeholder="Auto-calculated" readonly style="background: #f0f0f0;">
+                            </div>
+                        </div>
+                        
+                        <div id="flightOptions" style="display: none;">
+                            <div class="form-group">
+                                <label for="flightCost">Approximate Flight Cost ($)</label>
+                                <input type="number" id="flightCost" name="flightCost" min="0" step="0.01" placeholder="e.g., 450.00">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectNumber">Project Number (if applicable)</label>
+                                <input type="text" id="projectNumber" name="projectNumber" placeholder="Enter project number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="projectDescription">Project Description</label>
+                                <input type="text" id="projectDescription" name="projectDescription" placeholder="e.g., Site inspection in San Jose">
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="isSales" name="isSales">
+                                <label for="isSales">Coming for Sales (not a specific project)</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Additional Guests</h4>
+                        <p style="color: #666; margin-bottom: 15px;">Add family members or guests (they will share transportation with you)</p>
+                        <div id="guestsContainer"></div>
+                        <button type="button" class="btn btn-primary" onclick="addGuest()">+ Add Guest</button>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Register Participant</button>
+                    <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="mainContent" style="display: none;">
+            <div class="main-content">
+                <div id="statsContainer" class="stats-container">
+                    <h3>Registration Statistics</h3>
+                    <div class="stats">
+                        <div class="stat-card">
+                            <h4>Total Registered</h4>
+                            <p id="totalRegistered">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>5K Runners</h4>
+                            <p id="total5K">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>10K Runners</h4>
+                            <p id="total10K">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Aquarium Tickets</h4>
+                            <p id="totalAquarium">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Lunch Count</h4>
+                            <p id="totalLunch">0</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Lodging Needed</h4>
+                            <p id="totalLodging">0</p>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin-top: 30px; margin-bottom: 15px;">Shirt Size Summary</h4>
+                    <div id="shirtSizeStats" class="stats"></div>
+                    
+                    <h4 style="margin-top: 30px; margin-bottom: 15px;">Budget Summary</h4>
+                    <div id="budgetStats" class="stats"></div>
+                    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                        <h4 style="margin-bottom: 10px;">Total Event Budget</h4>
+                        <p style="font-size: 2em; font-weight: bold; color: #333; margin: 0;" id="totalBudget">$0.00</p>
+                    </div>
+                    
+                    <h4 style="margin-top: 30px; margin-bottom: 15px;">Export Options</h4>
+                    <button class="btn btn-primary" onclick="exportToCSV()">Export to CSV/Excel</button>
+                    <button class="btn btn-secondary" onclick="printSummary()">Print/Save as PDF</button>
+                    <button class="btn btn-danger" onclick="clearAllData()">Clear All Data</button>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <h3>Registered Participants</h3>
+                <div style="overflow-x: auto;">
+                    <table id="registrationTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Race</th>
+                                <th>Shirt</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Transport</th>
+                                <th>Distance/Cost</th>
+                                <th>Meal Allowance</th>
+                                <th>Project</th>
+                                <th>Options</th>
+                                <th>Guests</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrationTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div id="publicParticipantList" class="table-container" style="display: none;">
+            <h3>Registered Participants</h3>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Participant Name</th>
+                            <th>Registration Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="publicTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div id="publicNote" class="public-view-note" style="display: none; margin-top: 40px;">
+            <strong>Public View</strong> - Showing participant names only. 
+            <button class="btn btn-secondary" onclick="showLogin()" style="margin-left: 15px;">Admin Login</button>
+        </div>
+        
+        <div id="loginContainer" style="display: none; max-width: 400px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h3 style="text-align: center; margin-bottom: 20px;">Admin Login</h3>
+            <div class="form-group">
+                <label for="adminPassword">Enter Password</label>
+                <input type="password" id="adminPassword" placeholder="Admin password">
+            </div>
+            <button class="btn btn-primary" onclick="login()">Login</button>
+            <button class="btn btn-secondary" onclick="showPublicView()">Cancel</button>
+            <div id="loginError" style="color: #dc3545; margin-top: 10px; display: none;">Incorrect password</div>
+        </div>
+    </div>
+    
+    <script>
+        let registrations = JSON.parse(localStorage.getItem('powersRunRegistrations') || '[]');
+        let guestCounter = 0;
+        let isAdmin = false;
+        const ADMIN_PASSWORD = 'Powers570!';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedAdmin = sessionStorage.getItem('powersRunAdmin');
+            if (savedAdmin === 'true') {
+                isAdmin = true;
+                showAdminView();
+            } else {
+                showPublicView();
+            }
+            
+            updateTable();
+            updateStats();
+            updatePublicTable();
+            
+            document.getElementById('dateOfBirth').addEventListener('change', function() {
+                calculateAge('dateOfBirth', 'age');
+            });
+            
+            document.getElementById('transportation').addEventListener('change', function() {
+                const driveOptions = document.getElementById('driveOptions');
+                const flightOptions = document.getElementById('flightOptions');
+                
+                if (this.value === 'Driving') {
+                    driveOptions.style.display = 'block';
+                    flightOptions.style.display = 'none';
+                } else if (this.value === 'Flight') {
+                    driveOptions.style.display = 'none';
+                    flightOptions.style.display = 'block';
+                } else {
+                    driveOptions.style.display = 'none';
+                    flightOptions.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('isSales').addEventListener('change', function() {
+                toggleSalesVisit(this);
+            });
+            
+            document.getElementById('adminPassword').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    login();
+                }
+            });
+            
+            document.getElementById('drivingFrom').addEventListener('blur', function() {
+                if (this.value && !document.getElementById('driveMiles').value) {
+                    calculateDistance();
+                }
+            });
+        });
+        
+        function calculateAge(dobId, ageId) {
+            const dobElement = document.getElementById(dobId);
+            if (!dobElement || !dobElement.value) return;
+            
+            const dob = new Date(dobElement.value);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            const ageElement = document.getElementById(ageId);
+            if (ageElement) {
+                ageElement.value = age;
+            }
+        }
+        
+        async function calculateDistance() {
+            const fromLocation = document.getElementById('drivingFrom').value;
+            if (!fromLocation) {
+                showAlert('Please enter a starting location', 'error');
+                return;
+            }
+            
+            try {
+                const distances = {
+                    'sacramento, ca': 230,
+                    'san francisco, ca': 90,
+                    'san jose, ca': 45,
+                    'oakland, ca': 85,
+                    'fresno, ca': 150,
+                    'los angeles, ca': 350,
+                    'san diego, ca': 450,
+                    'modesto, ca': 180,
+                    'stockton, ca': 200,
+                    'hayward, ca': 70,
+                    'fremont, ca': 55,
+                    'santa cruz, ca': 25,
+                    'monterey, ca': 15,
+                    'salinas, ca': 10,
+                    'watsonville, ca': 8,
+                    'gilroy, ca': 30
+                };
+                
+                const locationKey = fromLocation.toLowerCase().trim();
+                let distance = distances[locationKey];
+                
+                if (!distance) {
+                    if (locationKey.includes('los angeles') || locationKey.includes('la,')) distance = 350;
+                    else if (locationKey.includes('san diego')) distance = 450;
+                    else if (locationKey.includes('sacramento')) distance = 230;
+                    else if (locationKey.includes('san francisco') || locationKey.includes('sf,')) distance = 90;
+                    else if (locationKey.includes('san jose')) distance = 45;
+                    else if (locationKey.includes('oakland')) distance = 85;
+                    else if (locationKey.includes('fresno')) distance = 150;
+                    else if (locationKey.includes('santa cruz')) distance = 25;
+                    else if (locationKey.includes('monterey')) distance = 15;
+                    else {
+                        showAlert('Could not calculate distance. Please enter manually or use format: City, CA', 'error');
+                        return;
+                    }
+                }
+                
+                document.getElementById('driveMiles').value = distance;
+                showAlert('Distance calculated: ' + distance + ' miles one-way', 'success');
+            } catch (error) {
+                showAlert('Error calculating distance. Please enter manually.', 'error');
+            }
+        }
+        
+        function toggleSalesVisit(checkbox) {
+            const projectNumber = document.getElementById('projectNumber');
+            const projectDescription = document.getElementById('projectDescription');
+            
+            if (checkbox.checked) {
+                projectNumber.disabled = true;
+                projectNumber.value = '';
+                projectDescription.disabled = true;
+                projectDescription.value = 'Sales visit';
+            } else {
+                projectNumber.disabled = false;
+                projectDescription.disabled = false;
+                if (projectDescription.value === 'Sales visit') {
+                    projectDescription.value = '';
+                }
+            }
+        }
+        
+        function showLogin() {
+            document.getElementById('loginContainer').style.display = 'block';
+            document.getElementById('adminHeader').style.display = 'none';
+            document.getElementById('publicNote').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('publicParticipantList').style.display = 'none';
+            document.getElementById('loginError').style.display = 'none';
+        }
+        
+        function login() {
+            const password = document.getElementById('adminPassword').value;
+            if (password === ADMIN_PASSWORD) {
+                isAdmin = true;
+                sessionStorage.setItem('powersRunAdmin', 'true');
+                showAdminView();
+                document.getElementById('adminPassword').value = '';
+            } else {
+                document.getElementById('loginError').style.display = 'block';
+            }
+        }
+        
+        function logout() {
+            isAdmin = false;
+            sessionStorage.removeItem('powersRunAdmin');
+            showPublicView();
+        }
+        
+        function showAdminView() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('adminHeader').style.display = 'flex';
+            document.getElementById('publicNote').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            document.getElementById('publicParticipantList').style.display = 'none';
+            document.getElementById('formContainer').style.display = 'block';
+        }
+        
+        function showPublicView() {
+            isAdmin = false;
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('adminHeader').style.display = 'none';
+            document.getElementById('publicNote').style.display = 'block';
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('publicParticipantList').style.display = 'block';
+            document.getElementById('formContainer').style.display = 'block';
+            updatePublicTable();
+        }
+        
+        function addGuest() {
+            guestCounter++;
+            const guestId = 'guest' + guestCounter;
+            
+            const guestHTML = `<div class="guest-section" id="${guestId}">
+                <div class="guest-header">
+                    <h5>Guest ${guestCounter}</h5>
+                    <button type="button" class="btn-remove" onclick="removeGuest('${guestId}')">Remove</button>
+                </div>
+                <div class="two-column">
+                    <div class="form-group">
+                        <label class="required">First Name</label>
+                        <input type="text" name="${guestId}_firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Last Name</label>
+                        <input type="text" name="${guestId}_lastName" required>
+                    </div>
+                </div>
+                <div class="two-column">
+                    <div class="form-group">
+                        <label class="required">Date of Birth</label>
+                        <input type="date" id="${guestId}_dateOfBirth" name="${guestId}_dateOfBirth" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Age</label>
+                        <input type="number" id="${guestId}_age" name="${guestId}_age" min="1" max="120" readonly style="background: #f0f0f0;" required>
+                    </div>
+                </div>
+                <div class="two-column">
+                    <div class="form-group">
+                        <label class="required">Gender</label>
+                        <select name="${guestId}_gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Race Distance</label>
+                        <select name="${guestId}_raceDistance" required>
+                            <option value="">Select Distance</option>
+                            <option value="5K">5K</option>
+                            <option value="10K">10K</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="${guestId}_sameContact" onchange="copySameContact('${guestId}')">
+                    <label for="${guestId}_sameContact">Use same email and phone as primary participant</label>
+                </div>
+                <div class="two-column">
+                    <div class="form-group">
+                        <label class="required">Email</label>
+                        <input type="email" id="${guestId}_email" name="${guestId}_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Phone</label>
+                        <input type="tel" id="${guestId}_phone" name="${guestId}_phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="required">Shirt Size & Type</label>
+                    <select name="${guestId}_shirtSize" required>
+                        <option value="">Select Size</option>
+                        <optgroup label="Youth">
+                            <option value="Youth XS">Youth XS</option>
+                            <option value="Youth S">Youth S</option>
+                            <option value="Youth M">Youth M</option>
+                            <option value="Youth L">Youth L</option>
+                            <option value="Youth XL">Youth XL</option>
+                        </optgroup>
+                        <optgroup label="Women's">
+                            <option value="Women's S">Women's S</option>
+                            <option value="Women's M">Women's M</option>
+                            <option value="Women's L">Women's L</option>
+                            <option value="Women's XL">Women's XL</option>
+                            <option value="Women's 2XL">Women's 2XL</option>
+                            <option value="Women's 3XL">Women's 3XL</option>
+                        </optgroup>
+                        <optgroup label="Men's">
+                            <option value="Men's XS">Men's XS</option>
+                            <option value="Men's S">Men's S</option>
+                            <option value="Men's M">Men's M</option>
+                            <option value="Men's L">Men's L</option>
+                            <option value="Men's XL">Men's XL</option>
+                            <option value="Men's 2XL">Men's 2XL</option>
+                            <option value="Men's 3XL">Men's 3XL</option>
+                            <option value="Men's 4XL">Men's 4XL</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="${guestId}_montereyAquarium" name="${guestId}_montereyAquarium">
+                    <label for="${guestId}_montereyAquarium">Join team at Monterey Bay Aquarium</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="${guestId}_needsLunch" name="${guestId}_needsLunch">
+                    <label for="${guestId}_needsLunch">Join team lunch after race</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="${guestId}_needsLodging" name="${guestId}_needsLodging">
+                    <label for="${guestId}_needsLodging">Needs lodging for Saturday night</label>
+                </div>
+                <div style="margin-top: 15px; text-align: right;">
+                    <button type="button" class="btn btn-danger" onclick="removeGuest('${guestId}')">Remove This Guest</button>
+                </div>
+            </div>`;
+            
+            document.getElementById('guestsContainer').insertAdjacentHTML('beforeend', guestHTML);
+            
+            document.getElementById(guestId + '_dateOfBirth').addEventListener('change', function() {
+                calculateAge(guestId + '_dateOfBirth', guestId + '_age');
+            });
+        }
+        
+        function removeGuest(guestId) {
+            document.getElementById(guestId).remove();
+        }
+        
+        function copySameContact(guestId) {
+            const checkbox = document.getElementById(guestId + '_sameContact');
+            const emailField = document.getElementById(guestId + '_email');
+            const phoneField = document.getElementById(guestId + '_phone');
+            
+            if (checkbox.checked) {
+                emailField.value = document.getElementById('email').value;
+                phoneField.value = document.getElementById('phone').value;
+                emailField.readOnly = true;
+                phoneField.readOnly = true;
+            } else {
+                emailField.readOnly = false;
+                phoneField.readOnly = false;
+            }
+        }
+        
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const registration = {
+                primaryParticipant: {},
+                guests: []
+            };
+            
+            for (let [key, value] of formData.entries()) {
+                if (!key.startsWith('guest')) {
+                    if (key === 'montereyAquarium' || key === 'needsLunch' || key === 'needsLodging' || key === 'isSales') {
+                        registration.primaryParticipant[key] = document.getElementById(key).checked;
+                    } else {
+                        registration.primaryParticipant[key] = value;
+                    }
+                }
+            }
+            
+            const guestSections = document.querySelectorAll('.guest-section');
+            guestSections.forEach(section => {
+                const guestId = section.id;
+                const guest = {};
+                
+                for (let [key, value] of formData.entries()) {
+                    if (key.startsWith(guestId)) {
+                        const fieldName = key.replace(guestId + '_', '');
+                        if (fieldName === 'montereyAquarium' || fieldName === 'needsLunch' || fieldName === 'needsLodging') {
+                            const checkbox = document.getElementById(key);
+                            guest[fieldName] = checkbox ? checkbox.checked : false;
+                        } else {
+                            guest[fieldName] = value;
+                        }
+                    }
+                }
+                
+                if (Object.keys(guest).length > 0) {
+                    registration.guests.push(guest);
+                }
+            });
+            
+            registration.id = Date.now();
+            registration.registrationDate = new Date().toISOString();
+            
+            registrations.push(registration);
+            localStorage.setItem('powersRunRegistrations', JSON.stringify(registrations));
+            
+            updateTable();
+            updateStats();
+            updatePublicTable();
+            showAlert('Registration successful! ' + (registration.guests.length > 0 ? 'Primary participant + ' + registration.guests.length + ' guest(s) registered.' : 'Participant registered.'), 'success');
+            this.reset();
+            document.getElementById('guestsContainer').innerHTML = '';
+            document.getElementById('driveOptions').style.display = 'none';
+            document.getElementById('flightOptions').style.display = 'none';
+            document.getElementById('age').value = '';
+            guestCounter = 0;
+        });
+        
+        function updateTable() {
+            const tbody = document.getElementById('registrationTableBody');
+            tbody.innerHTML = '';
+            
+            registrations.forEach(reg => {
+                const p = reg.primaryParticipant;
+                const guestCount = reg.guests ? reg.guests.length : 0;
+                const totalPeople = 1 + guestCount;
+                
+                const projectInfo = p.isSales ? 'Sales' : 
+                    (p.projectNumber ? '#' + p.projectNumber + ': ' + (p.projectDescription || '') : 
+                    (p.projectDescription || 'N/A'));
+                
+                let transportInfo = '';
+                let mealAllowance = '';
+                
+                if (p.transportation === 'Driving' && p.driveMiles) {
+                    const miles = parseFloat(p.driveMiles);
+                    transportInfo = 'Drive: ' + miles + 'mi';
+                    if (miles > 200) {
+                        const mealCost = 30 * totalPeople;
+                        mealAllowance = '$' + mealCost.toFixed(2);
+                    } else {
+                        mealAllowance = 'N/A';
+                    }
+                } else if (p.transportation === 'Flight') {
+                    const cost = p.flightCost ? parseFloat(p.flightCost) : 0;
+                    transportInfo = 'Flight: $' + cost.toFixed(2);
+                    const mealCost = 50 * totalPeople;
+                    mealAllowance = '$' + mealCost.toFixed(2);
+                } else {
+                    transportInfo = p.transportation || 'N/A';
+                    mealAllowance = 'N/A';
+                }
+                
+                const options = (p.montereyAquarium ? 'A ' : '') + (p.needsLunch ? 'L ' : '') + (p.needsLodging ? 'Ldg' : '');
+                
+                const row = tbody.insertRow();
+                row.innerHTML = '<td>' + p.firstName + ' ' + p.lastName + '</td>' +
+                    '<td>' + p.age + '</td>' +
+                    '<td>' + p.gender + '</td>' +
+                    '<td>' + p.raceDistance + '</td>' +
+                    '<td>' + p.shirtSize + '</td>' +
+                    '<td>' + p.email + '</td>' +
+                    '<td>' + p.phone + '</td>' +
+                    '<td>' + (p.transportation || 'N/A') + '</td>' +
+                    '<td>' + transportInfo + '</td>' +
+                    '<td>' + mealAllowance + '</td>' +
+                    '<td>' + projectInfo + '</td>' +
+                    '<td>' + options + '</td>' +
+                    '<td>' + (guestCount > 0 ? guestCount + ' guest(s)' : 'None') + '</td>' +
+                    '<td><button class="btn btn-danger" onclick="deleteRegistration(' + reg.id + ')" style="padding: 5px 10px; font-size: 0.9em;">Delete</button></td>';
+                
+                if (reg.guests && reg.guests.length > 0) {
+                    reg.guests.forEach((guest, index) => {
+                        const guestOptions = (guest.montereyAquarium ? 'A ' : '') + (guest.needsLunch ? 'L ' : '') + (guest.needsLodging ? 'Ldg' : '');
+                        
+                        const guestRow = tbody.insertRow();
+                        guestRow.style.background = '#f9f9f9';
+                        guestRow.innerHTML = '<td style="padding-left: 30px;">↳ ' + guest.firstName + ' ' + guest.lastName + '</td>' +
+                            '<td>' + guest.age + '</td>' +
+                            '<td>' + guest.gender + '</td>' +
+                            '<td>' + guest.raceDistance + '</td>' +
+                            '<td>' + guest.shirtSize + '</td>' +
+                            '<td>' + guest.email + '</td>' +
+                            '<td>' + guest.phone + '</td>' +
+                            '<td colspan="3" style="color: #999;">Traveling with primary</td>' +
+                            '<td></td>' +
+                            '<td>' + guestOptions + '</td>' +
+                            '<td>Guest ' + (index + 1) + '</td>' +
+                            '<td></td>';
+                    });
+                }
+            });
+        }
+        
+        function updatePublicTable() {
+            const tbody = document.getElementById('publicTableBody');
+            tbody.innerHTML = '';
+            
+            registrations.forEach(reg => {
+                const p = reg.primaryParticipant;
+                
+                const row = tbody.insertRow();
+                row.innerHTML = '<td>' + p.firstName + ' ' + p.lastName + '</td>' +
+                    '<td>' + new Date(reg.registrationDate).toLocaleDateString() + '</td>';
+                
+                if (reg.guests && reg.guests.length > 0) {
+                    reg.guests.forEach((guest, index) => {
+                        const guestRow = tbody.insertRow();
+                        guestRow.style.background = '#f9f9f9';
+                        guestRow.innerHTML = '<td style="padding-left: 30px;">↳ ' + guest.firstName + ' ' + guest.lastName + '</td>' +
+                            '<td>' + new Date(reg.registrationDate).toLocaleDateString() + '</td>';
+                    });
+                }
+            });
+        }
+        
+        function updateStats() {
+            let total = 0;
+            let total5K = 0;
+            let total10K = 0;
+            let totalLunch = 0;
+            let totalAquarium = 0;
+            let totalLodging = 0;
+            const shirtSizes = {};
+            
+            const REGISTRATION_COST = 35.60;
+            const LUNCH_COST = 27.50;
+            const LODGING_COST = 175.00;
+            const FUEL_COST_PER_MILE = 0.25;
+            
+            let registrationCost = 0;
+            let aquariumCost = 0;
+            let lunchCost = 0;
+            let lodgingCost = 0;
+            let flightCost = 0;
+            let driveCost = 0;
+            let mealAllowanceCost = 0;
+            
+            registrations.forEach(reg => {
+                const p = reg.primaryParticipant;
+                const guestCount = reg.guests ? reg.guests.length : 0;
+                const totalPeople = 1 + guestCount;
+                
+                total++;
+                registrationCost += REGISTRATION_COST;
+                
+                if (p.raceDistance === '5K') total5K++;
+                if (p.raceDistance === '10K') total10K++;
+                if (p.needsLunch) { totalLunch++; lunchCost += LUNCH_COST; }
+                
+                if (p.montereyAquarium) {
+                    totalAquarium++;
+                    const age = parseInt(p.age) || 0;
+                    if (age <= 4) aquariumCost += 0;
+                    else if (age <= 17) aquariumCost += 50;
+                    else if (age <= 69) aquariumCost += 65;
+                    else aquariumCost += 50;
+                }
+                
+                if (p.needsLodging) { totalLodging++; lodgingCost += LODGING_COST; }
+                
+                if (p.transportation === 'Flight') {
+                    if (p.flightCost) flightCost += parseFloat(p.flightCost) || 0;
+                    mealAllowanceCost += 50 * totalPeople;
+                } else if (p.transportation === 'Driving' && p.driveMiles) {
+                    const miles = parseFloat(p.driveMiles);
+                    driveCost += miles * 2 * FUEL_COST_PER_MILE;
+                    if (miles > 200) {
+                        mealAllowanceCost += 30 * totalPeople;
+                    }
+                }
+                
+                shirtSizes[p.shirtSize] = (shirtSizes[p.shirtSize] || 0) + 1;
+                
+                if (reg.guests) {
+                    reg.guests.forEach(guest => {
+                        total++;
+                        registrationCost += REGISTRATION_COST;
+                        
+                        if (guest.raceDistance === '5K') total5K++;
+                        if (guest.raceDistance === '10K') total10K++;
+                        if (guest.needsLunch) { totalLunch++; lunchCost += LUNCH_COST; }
+                        
+                        if (guest.montereyAquarium) {
+                            totalAquarium++;
+                            const age = parseInt(guest.age) || 0;
+                            if (age <= 4) aquariumCost += 0;
+                            else if (age <= 17) aquariumCost += 50;
+                            else if (age <= 69) aquariumCost += 65;
+                            else aquariumCost += 50;
+                        }
+                        
+                        if (guest.needsLodging) { totalLodging++; lodgingCost += LODGING_COST; }
+                        
+                        shirtSizes[guest.shirtSize] = (shirtSizes[guest.shirtSize] || 0) + 1;
+                    });
+                }
+            });
+            
+            const totalBudget = registrationCost + aquariumCost + lunchCost + lodgingCost + flightCost + driveCost + mealAllowanceCost;
+            
+            document.getElementById('totalRegistered').textContent = total;
+            document.getElementById('total5K').textContent = total5K;
+            document.getElementById('total10K').textContent = total10K;
+            document.getElementById('totalLunch').textContent = totalLunch;
+            document.getElementById('totalAquarium').textContent = totalAquarium;
+            document.getElementById('totalLodging').textContent = totalLodging;
+            
+            const shirtStatsDiv = document.getElementById('shirtSizeStats');
+            shirtStatsDiv.innerHTML = '';
+            
+            Object.keys(shirtSizes).forEach(size => {
+                const statCard = document.createElement('div');
+                statCard.className = 'stat-card';
+                statCard.innerHTML = '<h4>' + size + '</h4><p>' + shirtSizes[size] + '</p>';
+                shirtStatsDiv.appendChild(statCard);
+            });
+            
+            const budgetStatsDiv = document.getElementById('budgetStats');
+            budgetStatsDiv.innerHTML = 
+                '<div class="stat-card"><h4>Registration Fees</h4><p>$' + registrationCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Aquarium Tickets</h4><p>$' + aquariumCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Lunch Costs</h4><p>$' + lunchCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Lodging Costs</h4><p>$' + lodgingCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Flight Costs</h4><p>$' + flightCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Drive Costs</h4><p>$' + driveCost.toFixed(2) + '</p></div>' +
+                '<div class="stat-card"><h4>Meal Allowances</h4><p>$' + mealAllowanceCost.toFixed(2) + '</p></div>';
+            
+            document.getElementById('totalBudget').textContent = '$' + totalBudget.toFixed(2);
+        }
+        
+        function deleteRegistration(id) {
+            if (confirm('Are you sure you want to delete this registration?')) {
+                registrations = registrations.filter(r => r.id !== id);
+                localStorage.setItem('powersRunRegistrations', JSON.stringify(registrations));
+                updateTable();
+                updateStats();
+                updatePublicTable();
+                showAlert('Registration deleted', 'success');
+            }
+        }
+        
+        function exportToCSV() {
+            if (!isAdmin) {
+                showAlert('Admin access required to export data', 'error');
+                return;
+            }
+            
+            if (registrations.length === 0) {
+                showAlert('No data to export', 'error');
+                return;
+            }
+            
+            const headers = ['Type', 'First Name', 'Last Name', 'Date of Birth', 'Age', 'Gender', 'Race Distance', 'Email', 'Phone', 'Street Address', 'City', 'State', 'ZIP', 'Shirt Size', 'Transportation', 'Driving From', 'Drive Miles', 'Flight Cost', 'Meal Allowance', 'Project Number', 'Project Description', 'Monterey Aquarium', 'Lunch', 'Lodging', 'Registration Date'];
+            
+            const rows = [];
+            
+            registrations.forEach(reg => {
+                const p = reg.primaryParticipant;
+                const guestCount = reg.guests ? reg.guests.length : 0;
+                const totalPeople = 1 + guestCount;
+                
+                let mealAllowance = 0;
+                if (p.transportation === 'Driving' && p.driveMiles && parseFloat(p.driveMiles) > 200) {
+                    mealAllowance = 30 * totalPeople;
+                } else if (p.transportation === 'Flight') {
+                    mealAllowance = 50 * totalPeople;
+                }
+                
+                rows.push(['Primary', p.firstName, p.lastName, p.dateOfBirth, p.age, p.gender, p.raceDistance, p.email, p.phone, p.streetAddress, p.city, p.state, p.zipCode, p.shirtSize, p.transportation || '', p.drivingFrom || '', p.driveMiles || '', p.flightCost || '', mealAllowance, p.projectNumber || '', p.isSales ? 'Sales' : (p.projectDescription || ''), p.montereyAquarium ? 'Yes' : 'No', p.needsLunch ? 'Yes' : 'No', p.needsLodging ? 'Yes' : 'No', new Date(reg.registrationDate).toLocaleDateString()].map(field => '"' + field + '"').join(','));
+                
+                if (reg.guests) {
+                    reg.guests.forEach((guest, index) => {
+                        rows.push(['Guest ' + (index + 1), guest.firstName, guest.lastName, guest.dateOfBirth, guest.age, guest.gender, guest.raceDistance, guest.email, guest.phone, '', '', '', '', guest.shirtSize, 'With primary', '', '', '', 'Included with primary', '', '', guest.montereyAquarium ? 'Yes' : 'No', guest.needsLunch ? 'Yes' : 'No', guest.needsLodging ? 'Yes' : 'No', new Date(reg.registrationDate).toLocaleDateString()].map(field => '"' + field + '"').join(','));
+                    });
+                }
+            });
+            
+            const csvContent = [headers.join(',')].concat(rows).join('\n');
+            
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'powers_run_registrations_' + new Date().toISOString().split('T')[0] + '.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+            
+            showAlert('Data exported successfully!', 'success');
+        }
+        
+        function printSummary() {
+            if (!isAdmin) {
+                showAlert('Admin access required to print summary', 'error');
+                return;
+            }
+            
+            window.print();
+        }
+        
+        function clearForm() {
+            document.getElementById('registrationForm').reset();
+            document.getElementById('guestsContainer').innerHTML = '';
+            document.getElementById('driveOptions').style.display = 'none';
+            document.getElementById('flightOptions').style.display = 'none';
+            document.getElementById('age').value = '';
+            guestCounter = 0;
+        }
+        
+        function clearAllData() {
+            if (confirm('⚠️ WARNING: This will permanently delete ALL registration data!\n\nThis action cannot be undone. Are you absolutely sure?')) {
+                const backup = JSON.stringify(registrations);
+                localStorage.setItem('powersRunRegistrationsBackup', backup);
+                localStorage.setItem('powersRunBackupDate', new Date().toISOString());
+                
+                registrations = [];
+                localStorage.removeItem('powersRunRegistrations');
+                updateTable();
+                updateStats();
+                updatePublicTable();
+                showAlert('All data cleared. A backup has been saved. Contact admin if you need to restore.', 'success');
+            }
+        }
+        
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'alert alert-' + type;
+            alertDiv.textContent = message;
+            
+            const container = document.getElementById('alertContainer');
+            container.innerHTML = '';
+            container.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
